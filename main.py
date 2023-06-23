@@ -65,11 +65,52 @@ if int(age) >= 18:
                     if health <= 0:
                         print("You now have 0 health, and the wizard's magic overwhelms you... You have lost the game.")
                     else:
-                        print("Despite the wizard's hostility, you manage to survive and prove your worth. Congratulations, you win!")
+                        print("Despite the wizard's hostility, you manage to survive and prove your worth.")
+                        print("As a reward, the wizard gifts you a powerful staff, boosting your health by 5.")
+                        health += 5
+                        print("You have", health, "health now.")
+
+                        ans = input("The wizard reveals a secret passage behind his house. Will you enter? [yes/no] ").lower()
+                        if ans in ["yes", "y", "okay"]:
+                            print("You cautiously enter the secret passage, and the door shuts behind you.")
+                            print("As you traverse through the dark corridors, you encounter a pack of fierce wolves.")
+                            print("With your newfound staff, you fend off the wolves and emerge victorious.")
+                            print("You gain 10 health for your bravery and defeating the wolves.")
+
+                            health += 10
+                            print("You have", health, "health now.")
+                            print("You proceed deeper into the passage and stumble upon a hidden treasure room.")
+                            print("The room is filled with gold and precious gems, but also guarded by a sleeping dragon.")
+                            ans = input("Will you attempt to steal some treasure or leave the room quietly? [steal/leave] ")
+                            if ans == "steal":
+                                print("You greedily try to snatch some treasure, but the dragon awakens.")
+                                print("The dragon breathes fire, and you suffer a severe burn, losing 8 health.")
+                                health -= 8
+                                print("You have", health, "health left.")
+                                if health <= 0:
+                                    print("Your greed gets the best of you. The dragon engulfs you in flames, and you have lost the game.")
+                                else:
+                                    print("Although injured, you manage to escape the dragon's lair with your life.")
+                                    print("You leave the secret passage and return to the surface world.")
+
+                                    print("Congratulations, ", name + "! You have survived the magical realm and won the game!")
+
+                            else:
+                                print("You wisely decide to leave the room without disturbing the dragon's slumber.")
+                                print("You backtrack through the secret passage and return to the surface world.")
+
+                                print("Congratulations, ", name + "! You have survived the magical realm and won the game!")
+
+                        else:
+                            print("You decide against entering the secret passage. You continue your journey elsewhere.")
+
+                            print("Congratulations, ", name + "! You have survived the magical realm and won the game!")
+
                 else:
-                    print("As you step into the river, you are caught in a strong current. The river carries you away, and you lose the game.")
+                    print("You lose your balance while crossing the river and get swept away by the strong currents. You have lost the game.")
+
             else:
-                print("You hesitate for too long and lose your way. You are now lost in the unknown.")
+                print("You lose your way while attempting to swim across the lake. The waters engulf you, and you have lost the game.")
 
         else:
             print("As you take a step to the right, the ground beneath you collapses, and you fall into a deep abyss. You have lost the game.")
