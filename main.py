@@ -1,4 +1,4 @@
-print("Welcome to my second game!")
+print("Welcome to the Fantasy World!")
 name = input("What is your name? ")
 age = input("What is your age? ")
 
@@ -37,42 +37,44 @@ if int(age) >= 18:
     print("You are old enough to play! ")
     wants_to_play = input("Do you want to play? [yes|no] ").lower()
     if wants_to_play in ["yes", "y", "okay"]:
-        print("Let's play!")
-        print("You are starting with", health, "health")
+        print("Welcome,", name + "! Let the adventure begin!")
+        print("You find yourself in a mysterious world filled with magic and fantasy creatures.")
+        print("You suddenly realize that you have been transported to a realm beyond imagination.")
+        print("You are starting with", health, "health.")
 
-        left_or_right = input("First choice: Left or Right? [left|right] ").lower()
+        left_or_right = input("As you explore, you come across a forked path. Will you go left or right? [left/right] ").lower()
         if left_or_right == "left":
-            ans = input("Nice, you follow the path and reach a lake. Do you swim across or go around [across/around] ").lower()
+            ans = input("You follow the path and reach a beautiful lake. Do you swim across or go around? [across/around] ").lower()
             if ans == "around":
-                print("You went around and reached the other side of the lake")
+                print("You decide to go around and reach the other side of the lake.")
             elif ans == "across":
-                print("You managed to get across, but were bit by a fish and lost 5 health")
+                print("You manage to swim across, but a mischievous water sprite bites you, and you lose 5 health.")
                 health -= 5
-                print("You have", health, "health left ")
+                print("You have", health, "health left.")
 
                 # Check if the player wants to acquire an item
-                acquire = input("Do you want to search for items? [yes|no] ").lower()
+                acquire = input("While exploring further, you stumble upon a hidden chest. Do you want to search for items? [yes/no] ").lower()
                 if acquire in ["yes", "y", "okay"]:
                     health = acquire_item(health)  # Call the item acquisition function
 
-                ans = input("You noticed a house and a river. Which do you go to? [river/house] ")
+                ans = input("You notice a house and a river nearby. Which do you go to? [house/river] ")
                 if ans == "house":
-                    print("You go to the house and are greeted by the owner... He doesn't like you and you lose 5 health ")
+                    print("You approach the house and are greeted by a grumpy old wizard. He doesn't like visitors, and you lose 5 health.")
                     health -= 5
-                    print("You have", health, "health left")
+                    print("You have", health, "health left.")
                     if health <= 0:
-                        print("You now have 0 health and you lost the game... ")
+                        print("You now have 0 health, and the wizard's magic overwhelms you... You have lost the game.")
                     else:
-                        print("You have survived... You win! ")
+                        print("Despite the wizard's hostility, you manage to survive and prove your worth. Congratulations, you win!")
                 else:
-                    print("You fell in the river and lose. ")
+                    print("As you step into the river, you are caught in a strong current. The river carries you away, and you lose the game.")
             else:
-                print("You lost. ")
+                print("You hesitate for too long and lose your way. You are now lost in the unknown.")
 
         else:
-            print("You fell down and lost... ")
+            print("As you take a step to the right, the ground beneath you collapses, and you fall into a deep abyss. You have lost the game.")
 
     else:
-        print("Cya... ")
+        print("Maybe another time then... Farewell,", name + "!")
 else:
-    print("You are not old enough to play... ")
+    print("I'm sorry, but you are not old enough to embark on this adventure. Come back when you are older!")
